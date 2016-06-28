@@ -6,7 +6,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Mon Jun 27 05:03:11 2016
+/* at Tue Jun 28 11:16:46 2016
  */
 /* Compiler settings for ..\CommonFile\Tangram.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
