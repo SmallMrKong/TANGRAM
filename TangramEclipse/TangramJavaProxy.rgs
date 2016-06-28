@@ -1,0 +1,26 @@
+HKCR
+{
+	Tangram.JavaProxy.1 = s 'TangramJavaProxy Class'
+	{
+		CLSID = s '{2DFF2522-1FD8-4153-8C26-7634F0E95B7D}'
+	}
+	Tangram.JavaProxy = s 'TangramJavaProxy Class'
+	{		
+		CurVer = s 'Tangram.JavaProxy.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {2DFF2522-1FD8-4153-8C26-7634F0E95B7D} = s 'TangramJavaProxy Class'
+		{
+			ProgID = s 'Tangram.JavaProxy.1'
+			VersionIndependentProgID = s 'Tangram.JavaProxy'
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{6C04FDBD-2500-413D-92C4-EE00BF3EF03B}'
+			Version = s '1.0'
+		}
+	}
+}

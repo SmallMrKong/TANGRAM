@@ -1,0 +1,84 @@
+﻿<html>
+<head>
+    <META http-equiv="X-UA-Compatible" content="IE=9"> </META>
+    <link rel="stylesheet" href="res://cartodbres.dll/css/cartodb.css" />
+    <script src="res://cartodbres.dll/js/cartodb.js"></script>
+    <style>
+        html, body, #map {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script type="text/javascript">
+
+function onFeatureOver(e, latlng, pos, data, subLayerIndex){
+    Tangram.HTMLWindow("").test0.Text = latlng[0];
+    test1.Text = latlng[1];
+    test3.Text = "MapStudio:" + data['cartodb_id'];
+}
+
+function onFeatureOut(layerIndex){
+    test1.Text = "";
+    test3.Text = "";
+}
+
+function onFeatureClick(e, latlng, pos, data, subLayerIndex) {
+    //alert(Tangram.HtmlDocument.parentWindow);
+    //Tangram.HTMLWindow("").test0.Text = "经度：" + latlng[0];
+    Tangram.HtmlDocument.parentWindow.test0.Text = "经度：" + latlng[0];
+    test1.Text = "纬度：" + latlng[1];
+    test3.Text = data['cartodb_id'];
+}
+
+var test0;
+var test1;
+var test3;
+window.onload = function(){
+
+	var map = new L.Map('map', {
+		center: [0,0],
+		zoom: 2
+	  });
+
+	L.tileLayer('http://tile.stamen.com/toner/{z}/{x}/{y}.png', {
+          attribution: 'Stamen'
+        }).addTo(map);
+        cartodb.createLayer(map, 'http://documentation.cartodb.com/api/v2/viz/2b13c956-e7c1-11e2-806b-5404a6a683d5/viz.json')
+            .addTo(map)
+         .on('done', function(layer) {
+          layer.setInteraction(true);
+          layer.on('featureOver', onFeatureOver);
+          layer.on('featureOut', onFeatureOut);
+          layer.on('featureClick', onFeatureClick);
+          layer.on('error', function(err) {
+              cartodb.log.log('error: ' + err);
+              test0.Text = "error";
+          });
+        }).on('error', function() {
+          cartodb.log.log("some error occurred");
+        });
+}
+
+        function xx_OnClick(sender, e)
+        {
+           alert(Tangram.HTMLWindow("").test0.Text + "asdasd");
+        }
+
+        function Tangram_OnPageLoaded(SourceWindow, URL) {
+            if (SourceWindow == window)
+            {
+                Tangram.AttachNodeSubCtrlEvent(window, "test_test_Start_S0000", "button1", "OnClick", "xx_OnClick");
+                test1 = Tangram.GetCtrlInNode("test_test_Start_S0000", "textBox2");
+                test3 = Tangram.GetCtrlInNode("test_test_Start_S0000", "textBox3");
+            }
+        }
+        function Tangram_OnClrControlCreated(Node, Ctrl, CtrlName, CtrlHandle) {
+        }
+
+    </script>
+</body>
+</html>

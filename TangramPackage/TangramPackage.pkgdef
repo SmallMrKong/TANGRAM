@@ -1,0 +1,62 @@
+﻿[$RootKey$\Packages\{19631222-1992-0612-1965-060119821989}]
+@="TangramPackage Package"
+"InprocServer32"="$PackageFolder$\TangramPackage.dll"
+"CompanyName"="Tangram Team"
+"ProductName"="CloudAddin"
+"ProductVersion"="1.0"
+
+[$RootKey$\Packages\{19631222-1992-0612-1965-060119821989}\SatelliteDll]
+"DllName"="TangramPackageUI.dll"
+"Path"="$PackageFolder$"
+
+[$RootKey$\Menus]
+"{19631222-1992-0612-1965-060119821989}"=", 1000, 1"
+
+[$RootKey$\InstalledProducts\TangramPackage]
+@="#100"
+"Package"="{19631222-1992-0612-1965-060119821989}"
+"ProductDetails"="#102"
+"LogoID"="#400"
+"PID"="1.0"
+"UseInterface"=dword:00000000
+
+
+[$RootKey$\ToolWindows\{7a5a2942-c6a4-4d28-8c4d-7996c319206b}]
+@="{19631222-1992-0612-1965-060119821989}"
+"Name"="Tangram Tool Window"
+"Float"="100,100,300,400"
+"Orientation"="Right"
+"Style"="Float"
+"Window"="{4A9B7E51-AA16-11D0-A8C5-00A0C921A4D2}"
+//The GUID above is the TaskList GUID. You can replace it with any tool 
+//  window GUID to have the new window dock to that tool window.
+
+
+
+[$RootKey$\Editors\{19631222-1992-0612-1965-060119822016}]
+@="Application XMLDocument"
+"Package"="{19631222-1992-0612-1965-060119821989}"
+"DisplayName"="Application Xml Document"
+"ExcludeDefTextEditor"=dword:00000001
+"AcceptBinaryFiles"=dword:00000000
+
+//The GUID in the below registry entry is the GUID for the text 
+//  logical view, and can be changed to the view that is appropriate
+//  for your editor.
+[$RootKey$\Editors\{19631222-1992-0612-1965-060119822016}\LogicalViews]
+"{7651A703-06E5-11D1-8EBD-00A0C90F26EA}"=""
+
+[$RootKey$\Editors\{19631222-1992-0612-1965-060119822016}\Extensions]
+"AppXML"=dword:00000032
+
+[$RootKey$\KeyBindingTables\{7f8286c6-672d-484a-8c4b-1f257d7353b1}]
+@="#1"
+"AllowNavKeyBinding"=dword:00000000
+"Package"="{19631222-1992-0612-1965-060119821989}"
+
+//The first GUID below is the GUID for the Miscellaneous Files project type, and can be changed
+//  to the GUID of any other project you wish.
+[$RootKey$\Projects\{A2FE74E1-B743-11d0-AE1A-00A0C90FFFC3}\AddItemTemplates\TemplateDirs\{19631222-1992-0612-1965-060119821989}\/1]
+@="#100"
+"TemplatesDir"="$PackageFolder$\Templates"
+"SortPriority"=dword:00004E20

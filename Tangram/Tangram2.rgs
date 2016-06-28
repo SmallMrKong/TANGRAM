@@ -1,0 +1,32 @@
+HKCR
+{
+	Tangram.Tangram.1 = s 'Tangram Class'
+	{
+		CLSID = s '{19631222-1963-1992-1965-199206128CC5}'
+	}
+	Tangram.Tangram = s 'Tangram Class'
+	{
+		CLSID = s '{19631222-1963-1992-1965-199206128CC5}'
+		CurVer = s 'Tangram.Tangram.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {19631222-1963-1992-1965-199206128CC5} = s 'Tangram Class'
+		{
+			ProgID = s 'Tangram.Tangram.1'
+			VersionIndependentProgID = s 'Tangram.Tangram'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{19631222-1963-1992-1965-199206125775}'
+			'Implemented Categories' = s '' 
+			{ 
+				{59FB2056-D625-48D0-A944-1A85B5AB2640} = s '' 
+				{ 
+				} 
+			}
+		}
+	}
+}

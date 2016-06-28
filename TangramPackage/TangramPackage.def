@@ -1,0 +1,7 @@
+﻿; TangramPackage.def : Declares the module parameters.
+
+LIBRARY      "TangramPackage.DLL"
+
+EXPORTS
+	DllCanUnloadNow            PRIVATE
+	DllGetClassObject          PRIVATE

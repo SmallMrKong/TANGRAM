@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Tangram>
+  <COMLibs>
+    <ComLib>ComLibs\TangramView.dll</ComLib>
+  </COMLibs>
+  <MSI>
+    <msi>TangramCRTX86.msi</msi>
+    <msi>TangramCRTX64.msi</msi>
+  </MSI>
+  <CLRLibs>
+    <CLR>TangramAssemblies\TangramDotNetLib.dll</CLR>
+  </CLRLibs>
+  <Microsoft.VC140.CRT>
+    <CRT>concrt140.dll</CRT>
+    <CRT>msvcp140.dll</CRT>
+    <CRT>vccorlib140.dll</CRT>
+    <CRT>vcruntime140.dll</CRT>
+  </Microsoft.VC140.CRT>
+  <CommonFiles>
+    <CLR>Start.dll</CLR>
+  </CommonFiles>
+  <OfficePlus>
+    <ConfigFile>
+      <Config>excel.exe.config</Config>
+      <Config>powerpnt.exe.config</Config>
+      <Config>winword.exe.config</Config>
+    </ConfigFile>
+    <x86>
+      <TangramAssemblies></TangramAssemblies>
+    </x86>
+    <x64>
+      <TangramAssemblies></TangramAssemblies>
+    </x64>
+  </OfficePlus>
+</Tangram>

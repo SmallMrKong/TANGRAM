@@ -1,0 +1,11 @@
+<Tangram>
+  <window>
+    <node id="splitter" name="Splitter" rows="1" cols="2" width="145,767," height="443," middlecolor="RGB(255,192,192)" lefttopcolor="RGB(255,192,192)" rightbottomcolor="RGB(255,192,192)" vmin="150" hmin="150">
+      <node name="Splitter_View0000"/>
+      <node id="splitter" name="Splitter0" rows="2" cols="1" width="767," height="95,341," middlecolor="RGB(255,192,192)" lefttopcolor="RGB(255,192,192)" rightbottomcolor="RGB(255,192,192)" vmin="100">
+        <node name="Splitter0_View0000"/>
+        <node name="Splitter0_View0001"/>
+      </node>
+    </node>
+  </window>
+</Tangram>

@@ -1,0 +1,44 @@
+// TangramEclipse.idl : TangramEclipse的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(TangramEclipse.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+//
+//[
+//	object,
+//	uuid(6BA74B6A-90A7-45DF-A3B9-BAB66E71A8C0),
+//	dual,
+//	nonextensible,
+//	pointer_default(unique)
+//]
+//interface ITangramJavaProxy : IDispatch{
+//	[id(1)] HRESULT InitEclipse();
+//};
+[
+	uuid(6C04FDBD-2500-413D-92C4-EE00BF3EF03B),
+	version(1.0),
+]
+library TangramEclipseLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(E9B205E4-B70C-4A0D-BE9E-BA66995A4062)		
+	]
+	dispinterface _ITangramJavaProxyEvents
+	{
+		properties:
+		methods:
+	};
+	[
+		uuid(2DFF2522-1FD8-4153-8C26-7634F0E95B7D)		
+	]
+	coclass TangramJavaProxy
+	{
+		//[default] interface ITangramJavaProxy;
+		[default, source] dispinterface _ITangramJavaProxyEvents;
+	};
+};
+

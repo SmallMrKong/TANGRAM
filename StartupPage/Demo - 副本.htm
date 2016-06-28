@@ -1,0 +1,66 @@
+<html>
+<head>
+    <META http-equiv="X-UA-Compatible" content="IE=9"> </META>
+    <link rel="stylesheet" href="css/cartodb.css" />
+    <script src="js/cartodb.js"></script>
+    <style>
+        html, body, #map {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script type="text/javascript">
+
+function onFeatureOver(e, latlng, pos, data, subLayerIndex){
+	cartodb.log.log(e, latlng, pos, data);
+}
+
+function onFeatureOut(layerIndex){
+	cartodb.log.log('onFeatureOut');
+}
+
+function onFeatureClick(e, latlng, pos, data, subLayerIndex){
+    //cartodb.log.log('onFeatureClick');
+    alert(1);
+}
+
+window.onload = function(){
+
+	var map = new L.Map('map', {
+		center: [0,0],
+		zoom: 2
+	  });
+
+	L.tileLayer('http://tile.stamen.com/toner/{z}/{x}/{y}.png', {
+          attribution: 'Stamen'
+        }).addTo(map);
+        cartodb.createLayer(map, 'http://documentation.cartodb.com/api/v2/viz/2b13c956-e7c1-11e2-806b-5404a6a683d5/viz.json')
+            .addTo(map)
+         .on('done', function(layer) {
+          layer.setInteraction(true);
+          layer.on('featureOver', onFeatureOver);
+          layer.on('featureOut', onFeatureOut);
+          layer.on('featureClick', onFeatureClick);
+          layer.on('error', function(err) {
+            cartodb.log.log('error: ' + err);
+          });
+        }).on('error', function() {
+          cartodb.log.log("some error occurred");
+        });
+    }
+        function Tangram_OnPageLoaded(SourceWindow, URL) {
+            if (SourceWindow == window) 
+            {
+            }
+        }
+        function Tangram_OnClrControlCreated(Node, Ctrl, CtrlName, CtrlHandle) {
+            alert(22);
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<Tangram>
+  <window>
+    <node id="splitter" name="Start" style="0" rows="1" cols="2"
+        height="483," width="200,377,">
+      <node name="Start_S0000" id="CLRCtrl" cnnid="TangramDotNetLib.about,TangramDotNetLib"/>
+      <node name="Start_S0001" 
+        id="TangramTabCtrl" 
+        cnnid="TangramTabbedWnd.TabbedComponent.1"
+       style="16" > 
+        <node name="Page1" caption="Page1" id="hostview"/>
+        <node name="Page2" caption="Page2" id="ActiveX" cnnid="http://114.215.97.245/map.html"/>
+        <node name="Page3" caption="Page3"/> 
+        <node name="Page4" caption="Page4"/>
+      </node>
+    </node>
+  </window>
+</Tangram>

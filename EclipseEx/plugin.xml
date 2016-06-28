@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="EclipseEx Category"
+            id="EclipseEx.commands.category">
+      </category>
+      <command
+            categoryId="EclipseEx.commands.category"
+            description="Tangram for Eclipse"
+            id="EclipseEx.commands.EclipseExCommand"
+            name="Tangram for Eclipse">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="EclipseEx.commands.EclipseExCommand"
+            class="eclipseex.handlers.EclipseExHandler">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="EclipseEx.commands.EclipseExCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+6"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               label="Tangram"
+               mnemonic="E"
+               id="EclipseEx.menus.sampleMenu">
+            <command
+                  commandId="EclipseEx.commands.EclipseExCommand"
+                  mnemonic="S"
+                  id="EclipseEx.menus.sampleCommand">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="EclipseEx.toolbars.sampleToolbar">
+            <command
+                  commandId="EclipseEx.commands.EclipseExCommand"
+                  icon="icons/sample.gif"
+                  tooltip="Say hello Tangram for Eclipse"
+                  id="EclipseEx.toolbars.sampleCommand">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="EclipseEx Category"
+            id="EclipseEx">
+      </category>
+      <view
+            name="Tangram"
+            icon="icons/sample.gif"
+            category="EclipseEx"
+            class="eclipseex.views.EclipseExView"
+            id="eclipseex.views.EclipseExView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               ratio="0.5"
+               relative="org.eclipse.ui.views.ProblemView"
+               relationship="right"
+               id="eclipseex.views.EclipseExView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+
+</plugin>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Id="19631222-1992-0612-1965-060119821989" Version="1.1" Language="en-US" Publisher="Tangram Team" />
+    <DisplayName>Tangram for Visual Studio</DisplayName>
+    <Description xml:space="preserve">Tangram for Visual Studio</Description>
+  </Metadata>
+  <Installation AllUsers="true">
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[11.0,)" />
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.0,)" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="TangramPackage" Path="|TangramPackage;PkgdefProjectOutputGroup|" />
+  </Assets>
+</PackageManifest>

@@ -1,0 +1,43 @@
+<html>
+<script>
+    var test0;
+    function Tangram_OnPageLoaded(SourceWindow, URL) {
+        if (SourceWindow == window) {
+            var pRetFrame = Tangram.CreateFrame(0, 0, "test");
+            pRetFrame.Extend("test", Tangram.xtml("xtmlStartupDoc"));
+            //Tangram.ExtendCtrl(0, "test", Tangram.xtml("xtmlStartupDoc"));
+        }
+    }
+    function Tangram_OnClrControlCreated(Node, Ctrl, CtrlName, CtrlHandle) {
+       // alert(CtrlName);
+        if (CtrlName == "textBox1") {
+            test0 = Ctrl;
+        }
+    }
+    function Tangram_OnNodeCreated(Node) {
+    }
+</script>
+
+<body>
+    <xml id="xtmlStartupDoc">
+        <tangram>
+            <window toolwindowkey="123.appxml">
+                <node id="splitter" name="Start" style="0" rows="1" cols="2"
+                      height="483," width="200,377,">
+                    <node name="Start_S0000" id="CLRCtrl" cnnid="TangramDotNetLib.about,TangramDotNetLib" />
+                    <node name="Start_S0001"
+                          id="TangramTabCtrl"
+                          cnnid="TangramTabbedWnd.TabbedComponent.1"
+                          style="17">
+                        <node name="Page1" caption="Page1" id="hostview" />
+                        <node name="Page2" caption="Page2" id="ActiveX" cnnid="res://cartodbres.dll/demo2.htm" />
+                        <node name="Page3" caption="Page3" />
+                        <node name="Page4" caption="Page4" />
+                    </node>
+                </node>
+            </window>
+            <data><xx><yy>FFFFF??</yy></xx></data>
+        </tangram>
+    </xml>
+</body>
+</html>

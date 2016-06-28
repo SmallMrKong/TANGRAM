@@ -1,0 +1,16 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {4F44F00D-6E43-4023-A71D-C3AF7618DF10} = s 'CollaborationProxy Class'
+		{
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{19631222-1992-0612-1965-060119820911}'
+			Version = s '1.0'
+		}
+	}
+}

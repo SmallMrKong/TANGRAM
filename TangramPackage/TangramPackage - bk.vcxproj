@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <TargetName>TangramPackage</TargetName>
+    <ProjectGUID>{e027c65b-a2c7-4262-8711-38cd6ed0c648}</ProjectGUID>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(LocalAppData)\Microsoft\VisualStudio\14.0\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(LocalAppData)\Microsoft\VisualStudio\14.0\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="..\VsSDK.props" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32' and (exists('..\VsSDK.props'))" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(LocalAppData)\Microsoft\VisualStudio\14.0\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(LocalAppData)\Microsoft\VisualStudio\14.0\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="..\VsSDK.props" Condition="'$(Configuration)|$(Platform)'=='Release|Win32' and (exists('..\VsSDK.props'))" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalOptions>-ms_ext -c_ext -no_format_opt</AdditionalOptions>
+      <PreprocessorDefinitions>DEBUG;UNICODE;_UNICODE;_NEW_SDK=1;_WINDOWS;_USRDLL;i386;_X86_;_WCHAR_T_DEFINED;__MIDL__=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..;$(CommonProgramFiles)\Microsoft Shared\MSEnv;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>0</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(IntDir)%(FileName).tlb</TypeLibraryName>
+      <HeaderFileName>$(IntDir)%(FileName).h</HeaderFileName>
+      <DLLDataFileName>$(IntDir)%(FileName)_d.c</DLLDataFileName>
+      <InterfaceIdentifierFileName>$(IntDir)%(FileName).c</InterfaceIdentifierFileName>
+      <ProxyFileName>$(IntDir)%(FileName)_p.c</ProxyFileName>
+      <EnableErrorChecks>All</EnableErrorChecks>
+      <StructMemberAlignment>8</StructMemberAlignment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\;..;$(Office10Include);%(AdditionalIncludeDirectories);$(SolutionDir)CommonFile;</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBCS;_USRDLL;UNICODE;TLC=2;TLD=2;TLM=2;TLF=3;TLI=4;_X86_=1;i386=1;_NEW_SDK=1;_AFXDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)TangramPackage.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SDLCheck>false</SDLCheck>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;UNICODE;_UNICODE;_AFXDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <RegisterOutput>false</RegisterOutput>
+      <AdditionalOptions>/MACHINE:I386</AdditionalOptions>
+      <AdditionalDependencies>vsguids.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <ModuleDefinitionFile>.\TangramPackage.def</ModuleDefinitionFile>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EntryPointSymbol>_DllMainCRTStartup@12</EntryPointSymbol>
+      <ImportLibrary>$(OutDir)TangramPackage.lib</ImportLibrary>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalOptions>-ms_ext -c_ext -no_format_opt</AdditionalOptions>
+      <PreprocessorDefinitions>NDEBUG;_ATL_STATIC_REGISTRY;_ATL_MIN_CRT;UNICODE;_UNICODE;_NEW_SDK=1;_WINDOWS;_USRDLL;i386;_X86_;_WCHAR_T_DEFINED;__MIDL__=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..;$(CommonProgramFiles)\Microsoft Shared\MSEnv;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>0</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(IntDir)%(FileName).tlb</TypeLibraryName>
+      <HeaderFileName>$(IntDir)%(FileName).h</HeaderFileName>
+      <DLLDataFileName>$(IntDir)%(FileName)_d.c</DLLDataFileName>
+      <InterfaceIdentifierFileName>$(IntDir)%(FileName).c</InterfaceIdentifierFileName>
+      <ProxyFileName>$(IntDir)%(FileName)_p.c</ProxyFileName>
+      <EnableErrorChecks>All</EnableErrorChecks>
+      <StructMemberAlignment>8</StructMemberAlignment>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/Oxs</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>.;$(Office10Include);..;%(AdditionalIncludeDirectories);$(SolutionDir)CommonFile;</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBCS;_USRDLL;UNICODE;NDEBUG;TLC=2;TLD=2;TLM=2;TLF=3;TLI=4;_X86_=1;i386=1;_NEW_SDK=1;_AFXDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)TangramPackage.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;UNICODE;_UNICODE;_AFXDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <RegisterOutput>false</RegisterOutput>
+      <AdditionalOptions>/MACHINE:I386</AdditionalOptions>
+      <AdditionalDependencies>vsguids.lib;msvcrt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <ModuleDefinitionFile>.\TangramPackage.def</ModuleDefinitionFile>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EntryPointSymbol>_DllMainCRTStartup@12</EntryPointSymbol>
+      <ImportLibrary>$(OutDir)TangramPackage.lib</ImportLibrary>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Midl Include="TangramPackage.idl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Guids.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TangramSettingsDlg.cpp" />
+    <ClCompile Include="TangramVSIApp.cpp">
+      <TreatWarningAsError Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</TreatWarningAsError>
+    </ClCompile>
+    <ClCompile Include="TangramPackage.cpp">
+      <TreatWarningAsError Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</TreatWarningAsError>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <TreatWarningAsError Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</TreatWarningAsError>
+    </ClCompile>
+    <ClCompile Include="TangramToolWindow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TangramEditorAutomation.inl" />
+    <None Include="TangramEditorCore.inl" />
+    <None Include="TangramEditorEvents.inl" />
+    <None Include="TangramEditorFindAndReplace.inl" />
+    <None Include="TangramEditorPersistance.inl" />
+    <None Include="TangramEditorWindowing.inl" />
+    <None Include="TangramPackage.def" />
+    <PkgdefFile Include="msi\x86\TangramSetup.msi">
+      <FileType>Document</FileType>
+      <VSIXSubPath>msi\x86</VSIXSubPath>
+    </PkgdefFile>
+    <PkgdefFile Include="msi\x64\TangramSetup.msi">
+      <FileType>Document</FileType>
+      <VSIXSubPath>msi\x64</VSIXSubPath>
+    </PkgdefFile>
+    <PkgdefFile Include="..\Release\Tangram.dll">
+      <FileType>Document</FileType>
+      <VSIXSubPath>COMLibs</VSIXSubPath>
+    </PkgdefFile>
+    <PkgdefFile Include="..\Release\TangramView.dll">
+      <FileType>Document</FileType>
+      <VSIXSubPath>COMLibs</VSIXSubPath>
+    </PkgdefFile>
+    <PkgdefFile Include="..\Release\TangramExTabWnd.dll">
+      <FileType>Document</FileType>
+      <VSIXSubPath>COMLibs</VSIXSubPath>
+    </PkgdefFile>
+    <PkgdefFile Include="..\Release\TangramTabbedWnd.dll">
+      <FileType>Document</FileType>
+      <VSIXSubPath>COMLibs</VSIXSubPath>
+    </PkgdefFile>
+    <PkgdefFile Include="..\Release\TangramTabCtrl.dll">
+      <FileType>Document</FileType>
+      <VSIXSubPath>COMLibs</VSIXSubPath>
+    </PkgdefFile>
+    <PkgdefFile Include="..\Release\TangramVSIHelper.dll">
+      <FileType>Document</FileType>
+      <VSIXSubPath>COMLibs</VSIXSubPath>
+    </PkgdefFile>
+    <PkgdefFile Include="Microsoft.VC140.CRT\concrt140.dll">
+      <FileType>Document</FileType>
+    </PkgdefFile>
+    <PkgdefFile Include="Microsoft.VC140.CRT\msvcp140.dll">
+      <FileType>Document</FileType>
+    </PkgdefFile>
+    <PkgdefFile Include="Microsoft.VC140.CRT\vccorlib140.dll">
+      <FileType>Document</FileType>
+    </PkgdefFile>
+    <PkgdefFile Include="Microsoft.VC140.CRT\vcruntime140.dll">
+      <FileType>Document</FileType>
+    </PkgdefFile>
+    <PkgdefFile Include="Microsoft.VC140.CRT64\concrt140.dll">
+      <FileType>Document</FileType>
+      <VSIXSubPath>CRT64</VSIXSubPath>
+    </PkgdefFile>
+    <PkgdefFile Include="Microsoft.VC140.CRT64\msvcp140.dll">
+      <FileType>Document</FileType>
+      <VSIXSubPath>CRT64</VSIXSubPath>
+    </PkgdefFile>
+    <PkgdefFile Include="Microsoft.VC140.CRT64\vccorlib140.dll">
+      <FileType>Document</FileType>
+      <VSIXSubPath>CRT64</VSIXSubPath>
+    </PkgdefFile>
+    <PkgdefFile Include="Microsoft.VC140.CRT64\vcruntime140.dll">
+      <FileType>Document</FileType>
+      <VSIXSubPath>CRT64</VSIXSubPath>
+    </PkgdefFile>
+    <PkgdefFile Include="..\Release\TangramCLR.dll">
+      <FileType>Document</FileType>
+    </PkgdefFile>
+    <PkgdefFile Include="..\Release\TangramDotNetLib.dll">
+      <FileType>Document</FileType>
+      <VSIXSubPath>TangramAssemblies</VSIXSubPath>
+    </PkgdefFile>
+    <PkgdefFile Include="XML\Tangram.Xml">
+      <FileType>Document</FileType>
+      <SubType>Designer</SubType>
+    </PkgdefFile>
+    <PkgdefFile Include="XML\tangrameditor.xml">
+      <FileType>Document</FileType>
+    </PkgdefFile>
+    <PkgdefFile Include="MsOfficePlus\winword.tangram">
+      <FileType>Document</FileType>
+      <VSIXSubPath>MsOfficePlus</VSIXSubPath>
+    </PkgdefFile>
+    <PkgdefFile Include="MsOfficePlus\excel.tangram">
+      <FileType>Document</FileType>
+      <VSIXSubPath>MsOfficePlus</VSIXSubPath>
+    </PkgdefFile>
+    <PkgdefFile Include="MsOfficePlus\Powerpnt.tangram">
+      <FileType>Document</FileType>
+      <VSIXSubPath>MsOfficePlus</VSIXSubPath>
+    </PkgdefFile>
+    <PkgdefFile Include="MsOfficePlus\msaccess.tangram">
+      <FileType>Document</FileType>
+      <VSIXSubPath>MsOfficePlus</VSIXSubPath>
+    </PkgdefFile>
+    <PkgdefFile Include="Templates\TangramExtFile.APPXml">
+      <FileType>Document</FileType>
+      <VSIXSubPath>Templates</VSIXSubPath>
+    </PkgdefFile>
+    <PkgdefFile Include="Templates\TangramExtFile.html" />
+    <PkgdefFile Include="Templates\TangramExtFile0.APPXml">
+      <FileType>Document</FileType>
+      <VSIXSubPath>Templates</VSIXSubPath>
+    </PkgdefFile>
+    <PkgdefFile Include="Templates\TangramExtFile1.APPXml">
+      <FileType>Document</FileType>
+      <VSIXSubPath>Templates</VSIXSubPath>
+    </PkgdefFile>
+    <PkgdefFile Include="Templates\TangramExtFile2.APPXml">
+      <FileType>Document</FileType>
+      <VSIXSubPath>Templates</VSIXSubPath>
+    </PkgdefFile>
+    <PkgdefFile Include="Templates\TangramExtFile3.APPXml">
+      <FileType>Document</FileType>
+      <VSIXSubPath>Templates</VSIXSubPath>
+    </PkgdefFile>
+    <PkgdefFile Include="Templates\TangramExtFile4.APPXml">
+      <VSIXSubPath>Templates</VSIXSubPath>
+      <FileType>Document</FileType>
+    </PkgdefFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CommonIncludes.h" />
+    <ClInclude Include="TangramEditorDocument.h" />
+    <ClInclude Include="TangramEditorFactory.h" />
+    <ClInclude Include="Guids.h" />
+    <ClInclude Include="TangramSettingsDlg.h" />
+    <ClInclude Include="TangramVSIApp.h" />
+    <ClInclude Include="TangramToolWindow.h" />
+    <ClInclude Include="Package.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="StdAfx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TangramPackage.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <PkgdefFile Include="TangramPackage.pkgdef" />
+    <PkgdefFile Include="Templates\TangramPackage.vsdir">
+      <VSIXSubPath>Templates</VSIXSubPath>
+    </PkgdefFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v14.0\VSSDK\Microsoft.VsSDK.Cpp.targets" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v14.0\VSSDK\Microsoft.VsSDK.Cpp.Overrides.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

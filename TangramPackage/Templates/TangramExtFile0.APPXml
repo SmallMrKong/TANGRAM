@@ -1,0 +1,13 @@
+<Tangram>
+  <window>
+    <node id="splitter" name="Splitter" rows="1" cols="2" width="141,1223," height="653," middlecolor="RGB(255,192,128)" lefttopcolor="RGB(255,192,128)" rightbottomcolor="RGB(255,192,128)" vmin="155">
+      <node name="Splitter_View0000"/>
+      <node id="tangramtabctrl" name="tangramtabctrl" cnnid="tangramtabbedwnd.tabbedcomponent.1" style="19">
+        <node name="tangramtabctrl_Page0" caption="Tangram Page1"/>
+        <node name="tangramtabctrl_Page1" caption="Tangram Page2"/>
+        <node name="tangramtabctrl_Page2" caption="Tangram Page3"/>
+        <node name="tangramtabctrl_Page3" caption="Tangram Page4"/>
+      </node>
+    </node>
+  </window>
+</Tangram>

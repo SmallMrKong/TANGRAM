@@ -1,0 +1,9 @@
+<Tangram>
+  <window>
+    <node id="splitter" name="Start" style="0" rows="2" cols="1"
+        height="483," width="200,377,">
+      <node name="Start_S0000" id="CLRCtrl" cnnid="TangramDotNetLib.about,TangramDotNetLib"/>
+      <node name="Page2" caption="Page2" id="ActiveX" cnnid="http://114.215.97.245/map.html"/>
+    </node>
+  </window>
+</Tangram>

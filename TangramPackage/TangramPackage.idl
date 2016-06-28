@@ -1,0 +1,60 @@
+﻿/********************************************************************************
+*					Tangram Library - version 8.0								*
+*********************************************************************************
+* Copyright (C) 2002-2016 by Tangram Team.   All Rights Reserved.				*
+*
+* THIS SOURCE FILE IS THE PROPERTY OF TANGRAM TEAM AND IS NOT TO
+* BE RE-DISTRIBUTED BY ANY MEANS WHATSOEVER WITHOUT THE EXPRESSED
+* WRITTEN CONSENT OF TANGRAM TEAM.
+*
+* THIS SOURCE CODE CAN ONLY BE USED UNDER THE TERMS AND CONDITIONS
+* OUTLINED IN THE GPL LICENSE AGREEMENT.TANGRAM TEAM
+* GRANTS TO YOU (ONE SOFTWARE DEVELOPER) THE LIMITED RIGHT TO USE
+* THIS SOFTWARE ON A SINGLE COMPUTER.
+*
+* CONTACT INFORMATION:
+* mailto:sunhuizlz@yeah.net
+* http://www.CloudAddin.com
+*
+*
+********************************************************************************/
+
+// TangramPackage.idl : IDL source for TangramPackage.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (TangramPackage.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+midl_pragma warning (disable : 2015)
+import "vsshell.idl";
+midl_pragma warning (default : 2015)
+
+//standard dispids
+#define DISPID_Name                     (-800)
+#define DISPID_Delete                   (-801)
+#define DISPID_Object                   (-802)
+#define DISPID_Parent                   (-803)
+#define DISPID_NewEnum					(-4)
+#define DISPID_Value					(0)
+
+[
+	uuid(2c577d3d-e6da-4cf6-8b78-b6305263701c),
+	version(1.0),
+	helpstring("TangramPackage 1.0 Type Library")
+]
+library TangramPackageLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+	importlib("dte80a.olb");
+	[
+		uuid(19631222-1992-0612-1965-060119821989),
+		helpstring("Tangram Package")
+	]
+	coclass TangramPackage
+	{
+		[default] interface IVsPackage;
+	};
+};

@@ -1,0 +1,54 @@
+<html>
+
+<script>
+    function WindowPage_OnPageLoaded(SourceWindow, URL) {
+        if (SourceWindow == window) {
+            WndPage.ExtendCtrl(0, "", WndPage.xtml("xtmlStartupDoc"));
+            //alert(TangramCore);
+            //alert(TangramCore.AppExtender("DTE"));
+            //CComQIPtr<DTE2> pDTE2(pDTE);
+            //CComPtr<ToolWindows> pToolWindows;
+            //pDTE2->get_ToolWindows(&pToolWindows);
+            //if (pToolWindows)
+            //{
+            //	//CComPtr<VxDTE::OutputWindow> pOutWnd;
+            //	//pToolWindows->get_OutputWindow(&pOutWnd);
+            //	//CComPtr<OutputWindowPane> pPane;
+            //	//CComPtr<OutputWindowPanes> pPanes;
+            //	//pOutWnd->get_OutputWindowPanes(&pPanes);
+            //	//pPanes->Add(CComBSTR(L"Tangram"), &pPane);
+            //	//pPane->OutputString(CComBSTR(L"Welcome to Tangram!"));
+            //}
+            //alert(TangramCore.AppExtender("DTE").ToolWindows);
+            //alert(toolwnds);
+            //var outputwnd = toolwnds.OutputWindow;
+            //var panes = outputwnd.OutputWindowPanes;
+            //var pane = panes.Add("Tangram");
+            //pane.OutputString("Welcome to Tangram!");
+        }
+    }
+    function WindowPage_OnClrControlCreated(Node, Ctrl, CtrlName, CtrlHandle) {
+    }
+</script>
+
+<body>
+    <xml id="xtmlStartupDoc">
+        <tangramdesignertoolbar>
+            <window>
+                <node id="splitter" name="splitter" caption="Tangram Designer" style="0" rows="2" cols="1" height="300,483," width="500," middlecolor="RGB(255,224,192)">
+                    <node name="TangramToolPane1" id="TangramTabCtrl" cnnid="TangramTabbedWnd.TabbedComponent.1" style="18">
+                        <node name="TangramNodeView" caption="TangramDesigner" id="TangramNodeView" cnnid="TangramView.Connector.1" />
+                        <node name="TangramEditor" id="TreeView" SetHtml="1" doctype="designer" tag="designer" caption="Tangram DOM Model">
+                            <TreeNode>
+                            </TreeNode>
+                        </node>
+                    </node>
+                    <node name="TangramToolPane2" id="TangramTabCtrl" cnnid="TangramTabbedWnd.TabbedComponent.1" style="18">
+                        <node name="TangramPropertyGrid" caption="Property Editor" id="CLRCtrl" cnnid="system.windows.forms.propertygrid,tangram" />
+                    </node>
+                </node>
+            </window>
+        </tangramdesignertoolbar>
+    </xml>
+</body>
+</html>
