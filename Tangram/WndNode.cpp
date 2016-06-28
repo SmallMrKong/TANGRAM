@@ -314,6 +314,43 @@ STDMETHODIMP CWndNode::Extend(BSTR bstrKey, BSTR bstrXml, IWndNode** ppRetNode)
 
 STDMETHODIMP CWndNode::ExtendEx(int nRow, int nCol, BSTR bstrKey, BSTR bstrXml, IWndNode** ppRetNode)
 {
+	if (m_pPage&&m_nViewType == Splitter)
+	{
+		IWndNode* pNode = nullptr;
+		GetNode(nRow, nCol, &pNode);
+		if (pNode == nullptr)
+			return S_OK;
+		CWndNode* pWindowNode = (CWndNode*)pNode;
+		if (pWindowNode->m_pHostFrame == nullptr)
+		{
+			CString strName = pWindowNode->m_strWebObjName;
+			strName += _T("_Frame");
+
+			::SetWindowLong(pWindowNode->m_pHostWnd->m_hWnd, GWL_ID, 1);
+			m_pPage->CreateFrame(CComVariant(0), CComVariant((long)pWindowNode->m_pHostWnd->m_hWnd), strName.AllocSysString(), &pWindowNode->m_pHostFrame);
+			((CWndFrame*)pWindowNode->m_pHostFrame)->m_pHostNode = this;
+		}
+		if (pWindowNode->m_pHostFrame)
+		{
+			if (pWindowNode->m_pCurrentExNode)
+			{
+				::SetWindowLong(pWindowNode->m_pCurrentExNode->m_pHostWnd->m_hWnd, GWL_ID, 1);
+			}
+			HRESULT hr = pWindowNode->m_pHostFrame->Extend(bstrKey, bstrXml, ppRetNode);
+			if (hr != S_OK)
+			{
+				if (pWindowNode->m_pCurrentExNode)
+					::SetWindowLong(pWindowNode->m_pCurrentExNode->m_pHostWnd->m_hWnd, GWL_ID, AFX_IDW_PANE_FIRST + nRow * 16 + nCol);
+				else
+					::SetWindowLong(pWindowNode->m_pHostWnd->m_hWnd, GWL_ID, AFX_IDW_PANE_FIRST + nRow * 16 + nCol);
+				return S_OK;
+			}
+			CWndNode* pRootNode = (CWndNode*)*ppRetNode;
+			pWindowNode->m_pCurrentExNode = pRootNode;
+			::SetWindowLongPtr(pRootNode->m_pHostWnd->m_hWnd, GWLP_ID, AFX_IDW_PANE_FIRST + nRow * 16 + nCol);
+			return hr;
+		}
+	}
 	return S_OK;
 }
 
