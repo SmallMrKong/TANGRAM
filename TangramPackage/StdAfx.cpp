@@ -13,7 +13,8 @@
 * THIS SOFTWARE ON A SINGLE COMPUTER.
 *
 * CONTACT INFORMATION:
-* mailto:sunhuizlz@yeah.net, mailto:sunhui@cloudaddin.com
+* mailto:sunhuizlz@yeah.net
+* mailto:sunhui@cloudaddin.com
 * http://www.CloudAddin.com
 *
 *
