@@ -241,6 +241,7 @@ namespace TangramCLR
 		//[ComVisibleAttribute(true)]
 		//Object^ ExecScript(String^ strScript);
 		WndNode^ Extend(String^ strKey, String^ strXml);
+		WndNode^ ExtendEx(int nRow, int nCol, String^ strKey, String^ strXml);
 
 		property String^ Caption 
 		{

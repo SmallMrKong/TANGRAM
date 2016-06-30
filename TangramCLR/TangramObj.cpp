@@ -638,6 +638,24 @@ namespace TangramCLR
 		return nullptr;
 	}
 
+	WndNode^ WndNode::ExtendEx(int nRow, int nCol, String^ strKey, String^ strXml)
+	{
+		if (m_pWndNode)
+		{
+			BSTR bstrKey = STRING2BSTR(strKey);
+			BSTR bstrXml = STRING2BSTR(strXml);
+			IWndNode* pNode = nullptr;
+			m_pWndNode->ExtendEx(nRow, nCol, bstrKey, bstrXml, &pNode);
+			::SysFreeString(bstrKey);
+			::SysFreeString(bstrXml);
+			if (pNode)
+			{
+				return theAppProxy._createObject<IWndNode, WndNode>(pNode);
+			}
+		}
+		return nullptr;
+	}
+
 	Object^ WndNode::ActiveMethod(String^ strMethod, cli::array<Object^, 1>^ p)
 	{
 		Object^ pRetObj = nullptr;
